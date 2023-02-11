@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// import { CssBaseline } from "@mui/material";
+import { BrowserRouter as Router, Routes, Link,Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Create from "./pages/Create";
+import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <>
+
+    {/* <Navbar/> */}
+    <nav>
+      <Navbar/>
+    </nav>
+    <Routes>
+    {/* <nav>
+      <ul>
+        <li>
+          <Link to="/">ListNFT</Link>
+        </li>
+        <li>
+          <Link to="/test">Test</Link>
+        </li>
+        <li>
+          <Link to="/test1">Test1</Link>
+        </li>
+      </ul>
+    </nav> */}
+    <Route path="/" element = {<Home/>}/>
+    <Route path="/Marketplace" element={<Marketplace/>}/>
+    <Route path="/Create" element={<Create/>} />
+    <Route path="/Profile" element={<Profile/>} />
+  </Routes>
+    </>
   );
 }
 
