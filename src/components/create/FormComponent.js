@@ -44,7 +44,6 @@ const FormComponent = () => {
   async function uploadArt(){
     console.log("inside uploadArt")
     try {
-      //upload the file to IPFS
       const response = await uploadFileToIPFS(nftArt);
       if(response.success === true) {
           console.log("Uploaded image to Pinata: ", response.pinataURL)
@@ -61,7 +60,7 @@ const FormComponent = () => {
     console.log(file)
     console.log("inside onchange file")
    
-    // check for file extension
+   
    
 }
 
@@ -69,7 +68,7 @@ async function uploadMetadataToIPFS(nftName,nftDescription,price,url) {
   console.log("inside uploadMetadataToIPFS")
 
  
-  //Make sure that none of the fields are empty
+ 
   if( !nftName || !nftDescription || !price || !url)
       return;
 
@@ -78,7 +77,7 @@ async function uploadMetadataToIPFS(nftName,nftDescription,price,url) {
   }
 
   try {
-      //upload the metadata JSON to IPFS
+
       const response = await uploadJSONToIPFS(nftJSON);
       if(response.success === true){
           console.log("Uploaded JSON to Pinata: ", response)
@@ -94,7 +93,7 @@ async function listNFT(nftName,nftDescription,price,url) {
 
   console.log("inside listNFT")
 
-  //Upload data to IPFS
+
   try {
       const metadataURL = await uploadMetadataToIPFS(nftName,nftDescription,price,url);
 
@@ -122,7 +121,7 @@ async function listNFT(nftName,nftDescription,price,url) {
       console.log('the list price is:', listingPrice)
       listingPrice = listingPrice.toString()
 
-      //actually create the NFT
+    
       let transaction = await contract.createToken(metadataURL, nftPrice, { value: listingPrice })
       await transaction.wait()
 

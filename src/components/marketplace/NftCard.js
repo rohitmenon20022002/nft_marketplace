@@ -27,7 +27,7 @@ export default function NftCard({price,artUrl,artTitle,artDescription}) {
       </IconButton> */}
       {/* <AspectRatio > */}
       <MediaRenderer
-    src="https://gateway.pinata.cloud/ipfs/QmX7twSYtrsffMJkigGmnFjSzSSnvnqpeRzgftiug9ngJp"
+    src={artUrl}
     alt="A mp4 video"
     width='200px'
     height='200px'

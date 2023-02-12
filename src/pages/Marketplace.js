@@ -4,16 +4,18 @@ import getContract from "../helpers/getContract";
 import axios from 'axios';
 import { ethers } from 'ethers';
 import { useEffect,useState } from 'react';
-// import ProgressIndicator from '../components/common/ProgressIndicator';
+import ProgressIndicator from '../components/common/ProgressIndicator';
 import NftCard from '../components/marketplace/NftCard';
 // import { MediaRenderer } from "@thirdweb-dev/react";
+import { Container,Box } from '@mui/material';
+
 
 
  
 
 const Marketplace = () => {
 
-  const [nfts,setNfts] = useState([]);
+  const [nfts,setNfts] = useState(null);
   // const [progress,setProgress] = useState(false);
 
   useEffect(()=>{
@@ -95,7 +97,18 @@ const Marketplace = () => {
    }
   return (
   <>
-    <Container
+  {nfts ? 
+   <Container sx={{display:"flex", flexDirection:"row", flexWrap:"wrap",justifyContent:"space-around",alignItems:"center" ,marginTop:"20px"}}>
+   {nfts.map((nft)=>
+   <Box sx={{margin:"10px"}}>
+    <NftCard price={nft.price} artUrl={nft.image} artTitle = {nft.name} artDescription = {nft.description}  />
+    </Box>
+   
+   )}
+   </Container > :
+   <ProgressIndicator/>}
+   
+
   </>
   )
 }
