@@ -2,8 +2,8 @@ import axios from 'axios';
 
 
 // require('dotenv').config();
-const key = "9458cdb331c3ee5cdfe7";
-const secret = "95b60efdcd34ade597719c660f81039f57094cc5f6add0d0de0bdd14004ad99f";
+const key = "7e506d115c22eef3dd5b";
+const secret = "71aa4eb14afa81a1f153505486e4f7c02da0a6f8ec7027bb49e0fbcbf01cda55";
 
 
 

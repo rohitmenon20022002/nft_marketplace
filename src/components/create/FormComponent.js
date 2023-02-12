@@ -112,7 +112,7 @@ async function listNFT(nftName,nftDescription,price,url) {
       console.log("please wait..");
 
 
-      let contract = new ethers.Contract("0x8C8aD13082e5fC5BFe45c32fFB0A81fbF594F0b5", Marketplace.abi, signer)
+      let contract = new ethers.Contract("0x8d84d36E3bd4eb10e98D63476BFbAeE2Af2019a2", Marketplace.abi, signer)
       console.log(contract)
 
 
