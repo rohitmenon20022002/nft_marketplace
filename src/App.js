@@ -1,22 +1,22 @@
 // import { CssBaseline } from "@mui/material";
-import { BrowserRouter as Router, Routes, Link,Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Create from "./pages/Create";
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import Profile from "./pages/Profile";
-
+//hello, change
 function App() {
   return (
-    
+
     <>
 
-    {/* <Navbar/> */}
-    <nav>
-      <Navbar/>
-    </nav>
-    <Routes>
-    {/* <nav>
+      {/* <Navbar/> */}
+      <nav>
+        <Navbar />
+      </nav>
+      <Routes>
+        {/* <nav>
       <ul>
         <li>
           <Link to="/">ListNFT</Link>
@@ -29,11 +29,11 @@ function App() {
         </li>
       </ul>
     </nav> */}
-    <Route path="/" element = {<Home/>}/>
-    <Route path="/Marketplace" element={<Marketplace/>}/>
-    <Route path="/Create" element={<Create/>} />
-    <Route path="/Profile" element={<Profile/>} />
-  </Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Marketplace" element={<Marketplace />} />
+        <Route path="/Create" element={<Create />} />
+        <Route path="/Profile" element={<Profile />} />
+      </Routes>
     </>
   );
 }
